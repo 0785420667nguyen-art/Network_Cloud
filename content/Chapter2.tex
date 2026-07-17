@@ -1,0 +1,79 @@
+\section{CƠ SỞ LÝ THUYẾT}
+\subsection{Cloud Computing}
+\subsubsection{Tổng quan Cloud Computing}
+\subsubsection{Các mô hình dịch vụ}
+\subsubsection{Các mô hình triển khai}
+\subsection{Software Defined Networking (SDN)}
+\subsubsection{Tổng quan về SDN}
+
+SDN là mô hình mạng dựa trên phần mềm, trong đó tách biệt mặt điều khiển (Control Plane) khỏi mặt chuyển tiếp dữ liệu (Data Plane).
+
+Trong SDN, SDN controller là nơi tập trung các chức năng điều khiển, các thiết bị chuyển mạch chuyển tiếp gói tin theo các luật do Controller thiết lập.
+
+Nhờ SDN, toàn bộ mạng được giám sát và quản lý tập trung thông qua phần mềm và linh hoạt điều chỉnh theo nhu cầu và chính sách của doanh nghiệp.
+
+\subsubsection{Kiến trúc của SDN}
+
+Kiến trúc SDN được chia thành ba lớp chính : Lớp ứng dụng (Application Layer), lớp điều khiển (Control Layer) và lớp cơ sỏ hạ tầng (Infrastructure Layer), liên kết với nhau thông qua giao diện lập trình (API)
+\begin{enumerate}
+  \item Application Layer
+  
+  Application Layer là lớp cao nhất của SDN, bao gồm các ứng dụng điều khiển mạng như : routing, firewall, QoS,...
+  
+  Các ứng dụng gửi yêu cầu đến SDN Controller thông qua API để Controller tính toán và cài đặt các flow rule phù hợp
+  
+  \item Control Layer 
+  
+  Cotrol Layer là lớp trung tâm của SDN, bao gồm các SDN Controller : ONOS, OpenDaylight, Ryu, Flloodlight.
+
+  Controller thực hiện các nhiệm vụ như : thu thập thông tin toàn mạng, tính toán đường đi tối ưu, giám sát thiết bị, thiết lập các Flow rule,...và duy trì cái nhìn tổng thể, cho phép đưa ra các quyết định tối ưu cho hệ thống.
+  
+  \item Infrastructure Layer
+  
+  Infrastructure Layer gồm các thiết bị thực hiện chuyển tiếp dữ liệu dựa trên các Flow rule đã được Controller cài đặt.
+\end{enumerate}
+\subsubsection{Cơ chế hoạt động của SDN}
+\begin{enumerate}
+    \item \textbf{Gói tin đến Switch}
+    \begin{itemize}
+        \item Switch nhận gói tin từ thiết bị đầu cuối.
+        \item Kiểm tra \textbf{Flow Table} để tìm quy tắc xử lý.
+    \end{itemize}
+
+    \item \textbf{Kiểm tra Flow Table}
+    \begin{itemize}
+        \item \textbf{Có Flow Rule:} Switch xử lý ngay theo quy tắc (chuyển tiếp, loại bỏ, sửa đổi gói tin,...).
+        \item \textbf{Không có Flow Rule:} Switch gửi thông điệp \textbf{Packet-In} đến SDN Controller.
+    \end{itemize}
+
+    \item \textbf{Controller xử lý}
+    \begin{itemize}
+        \item Phân tích thông tin gói tin (MAC, IP, giao thức, cổng,...).
+        \item Xem xét các chính sách mạng (QoS, bảo mật, tải mạng,...).
+        \item Tính toán đường đi hoặc hành động phù hợp.
+    \end{itemize}
+
+    \item \textbf{Cài đặt Flow Rule}
+    \begin{itemize}
+        \item Controller gửi thông điệp \textbf{Flow-Mod} đến Switch.
+        \item Switch cập nhật \textbf{Flow Table} với quy tắc mới, bao gồm:
+        \begin{itemize}
+            \item \textbf{Match Fields:} Điều kiện so khớp (MAC, IP, VLAN, cổng, giao thức,...).
+            \item \textbf{Actions:} Hành động (chuyển tiếp, loại bỏ, sửa đổi, gửi lên Controller,...).
+            \item \textbf{Priority:} Mức độ ưu tiên.
+            \item \textbf{Timeout:} Thời gian hiệu lực.
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{Chuyển tiếp gói tin}
+    \begin{itemize}
+        \item Switch thực hiện xử lý theo Flow Rule mới.
+        \item Các gói tin tiếp theo của cùng một \textit{flow} được xử lý trực tiếp tại Switch mà không cần gửi lại Controller, giúp giảm độ trễ và tăng hiệu năng.
+    \end{itemize}
+\end{enumerate}
+\subsection{VLAN}
+\subsection{VPN và GRE Tunnel}
+\begin{itemize}
+    \item \textbf{VPN}(Virtual Private Network) là một mạng riêng ảo cho phép mở rộng kết nối mạng LAN qua một hạ tầng công cộng bằng cách đóng gói và mã hóa các gói dữ liệu.
+     \item \textbf{GRE Tunnel} GRE (Generic Routing Encapsulation) là giao thức tạo đường hầm mạng ảo P2P đơn giản.GRE đóng gói hầu hết các loại gói IP (IPv4, IPv6) hoặc các giao thức lớp mạng khác bên trong một gói IP mới. GRE thường dùng để chuyển các lưu lượng đa hướng (multicast, các giao thức định tuyến nhúng) hoặc tạo kênh truyền L2 giữa hai mạng bằng cách gói đa hướng bên trong kênh P2P.
+\end{itemize}
