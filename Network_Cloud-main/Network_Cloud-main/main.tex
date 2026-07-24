@@ -1,0 +1,51 @@
+\documentclass{article}
+\input{config/preamble} % Nhúng preamble
+
+\begin{document}
+	
+	% --- PHẦN BÌA (KHÔNG ĐÁNH SỐ) ---
+	\pagenumbering{gobble} 
+	
+	\input{Template/TrangBia}     % Trang bìa 1
+	\input{Template/TrangPhuBia}   % Trang bìa 2
+	
+	
+	% --- PHẦN ĐẦU CỦA BÁO CÁO ---
+	\pagenumbering{roman}          
+	\setcounter{page}{3}           
+	
+	\input{Template/LoiCamOn}
+	\input{Template/CamKet}
+	\input{Template/TomTat}
+	
+	% Tự động tạo MỤC LỤC
+	\tableofcontents 
+	\newpage
+	
+	\listoffigures % Danh mục Hình vẽ
+	\addcontentsline{toc}{section}{DANH MỤC HÌNH VẼ}
+	\newpage
+	
+	\listoftables % Danh mục Bảng biểu
+	\addcontentsline{toc}{section}{DANH MỤC BẢNG BIỂU}
+	\newpage
+    	
+	\input{Template/DanhMucVietTat}
+	
+
+	% --- PHẦN THÂN CỦA BÁO CÁO 
+	\newpage              
+	\pagenumbering{arabic}        
+    
+	\input{content/Chapter1}
+	\input{content/Chapter2}
+	\input{content/Chapter3}
+        
+	% --- PHẦN CUỐI CỦA BÁO CÁO ---
+	
+	% Tự động tạo TÀI LIỆU THAM KHẢO
+	% Lệnh này ép buộc hiển thị TẤT CẢ tài liệu trong file .bib
+    \nocite{*}
+    \bibliography{tailieuthamkhao}
+	
+\end{document}
