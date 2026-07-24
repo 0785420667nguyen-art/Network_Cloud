@@ -1,0 +1,24 @@
+\section*{TÓM TẮT}
+
+Hiện nay, nhiều doanh nghiệp vận hành mô hình gồm một trụ sở chính và nhiều chi nhánh phân tán. Việc quản lý, cấu hình và giám sát hệ thống mạng theo cách truyền thống gặp nhiều khó khăn: phải cấu hình từng thiết bị thủ công, thiếu khả năng quản lý tập trung, khó khăn trong việc giám sát và xử lý sự cố. Sự phát triển của Cloud Computing và Software Defined Networking (SDN) đã mở ra hướng tiếp cận mới, cho phép quản lý hạ tầng mạng một cách linh hoạt, tự động và tập trung.
+
+Đề tài \textbf{"Quản lý mạng doanh nghiệp trên nền tảng Cloud sử dụng SDN"} nghiên cứu và xây dựng một mô hình quản lý mạng doanh nghiệp hiện đại, kết hợp Private Cloud với công nghệ SDN. Hệ thống cho phép quản lý tập trung toàn bộ thiết bị mạng thông qua SDN Controller (Ryu Framework), tự động hóa việc cấu hình VLAN và Flow Rule, kết nối các chi nhánh qua VPN/GRE Tunnel, và cung cấp giao diện Web để giám sát, quản lý theo thời gian thực.
+
+\textbf{Nội dung chính của đề tài:}
+\begin{itemize}
+    \item \textbf{Chương 1 -- Tổng quan đề tài:} Trình bày lý do chọn đề tài, mục tiêu nghiên cứu, đối tượng và phạm vi nghiên cứu, phương pháp nghiên cứu, ý nghĩa thực tiễn.
+    
+    \item \textbf{Chương 2 -- Cơ sở lý thuyết:} Giới thiệu các kiến thức nền tảng về Cloud Computing (IaaS, PaaS, SaaS, các mô hình triển khai), Software Defined Networking (kiến trúc 3 lớp, OpenFlow, SDN Controller), VLAN (Access Port, Trunk Port, IEEE 802.1Q, Inter-VLAN Routing), VPN/GRE Tunnel.
+    
+    \item \textbf{Chương 3 -- Phân tích và thiết kế:} Phân tích yêu cầu chức năng và phi chức năng, thiết kế mô hình mạng doanh nghiệp, thiết kế VLAN và phân bổ địa chỉ IP, thiết kế Private Cloud, thiết kế SDN Controller và REST API, thiết kế cơ sở dữ liệu, thiết kế giao diện Website quản lý.
+    
+    \item \textbf{Chương 4 -- Triển khai và đánh giá:} Trình bày môi trường triển khai (phần cứng, phần mềm), triển khai Private Cloud (Proxmox/OpenStack), triển khai SDN (Ryu Controller, Open vSwitch), triển khai VPN/GRE Tunnel, xây dựng Website quản lý (Backend API, Frontend Dashboard, Database), tự động hóa (sinh VLAN, sinh Flow Rule, routing, push config), thực hiện các kịch bản kiểm thử và đánh giá hiệu năng (thời gian triển khai, throughput, latency, packet loss, tài nguyên hệ thống, khả năng mở rộng).
+    
+    \item \textbf{Chương 5 -- Kết luận và hướng phát triển:} Tổng kết kết quả đạt được, phân tích hạn chế, đề xuất các hướng phát triển (tích hợp Kubernetes, Ansible, Multi-Controller, Prometheus/Grafana, Machine Learning, Zero-Touch Provisioning, Hybrid/Multi-Cloud, Security Enhancement, Intent-Based Networking).
+\end{itemize}
+
+\textbf{Kết quả đạt được:} Hệ thống giúp giảm đáng kể thời gian cấu hình thiết bị, đơn giản hóa công tác quản trị mạng, tăng khả năng mở rộng khi bổ sung chi nhánh hoặc người dùng mới, và cung cấp khả năng giám sát theo thời gian thực thông qua giao diện Web trực quan.
+
+\textbf{Từ khóa:} Cloud Computing, Software Defined Networking (SDN), Ryu Controller, Open vSwitch, OpenFlow, VLAN, VPN/GRE Tunnel, Private Cloud, Quản lý mạng doanh nghiệp.
+
+\newpage
